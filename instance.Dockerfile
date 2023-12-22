@@ -1,6 +1,7 @@
 ARG BASE_IMAGE_VERSION
 ARG REPO_NAME
 FROM europe-docker.pkg.dev/superb-blend-305320/lex-public-registry/django_process_admin:${BASE_IMAGE_VERSION}
+ARG REPO_NAME
 WORKDIR /app/DjangoProcessAdminGeneric
 COPY . /app/DjangoProcessAdminGeneric/generic_app/submodels/${REPO_NAME}
 RUN if [ -f /app/DjangoProcessAdminGeneric/generic_app/submodels/${REPO_NAME}/requirements.txt ]; then \
